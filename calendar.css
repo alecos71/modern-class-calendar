@@ -1,0 +1,104 @@
+/*************************** Calendar Top Navigation **************************/
+#calendar {
+  margin: 0px auto;
+  padding: 0px;
+  width: 602px;
+  font-family: Helvetica, "Times New Roman", Times, serif;
+}
+#calendar .calendar_box {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 40px;
+  background-color: #787878;
+}
+#calendar .calendar_header {
+  line-height: 40px;  
+  vertical-align: middle;
+  position: absolute;
+  left: 11px;
+  top: 0px;
+  width: 582px;
+  height: 40px;
+  text-align: center;
+}
+#calendar .calendar_header .calendar_prev, #calendar .calendar_header .calendar_next {
+  position: absolute;
+  top: 0px;
+  height: 17px;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: #FFF;
+}
+#calendar .calendar_header .calendar_title {
+  color: #FFF;
+  font-size: 18px;
+}
+#calendar .calendar_header .calendar_prev {
+  left: 0px;
+}
+#calendar .calendar_header .calendar_next {
+  right: 0px;
+}
+/*************************** Calendar Content Cells ***************************/
+#calendar .calendar_content {
+  border: 1px solid #787878;
+  border-top: none;
+}
+#calendar .calendar_label {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#calendar .calendar_label .calendar_names {
+  margin: 0px;
+  padding: 0px;
+  margin-right: 5px;
+  float: left;
+  list-style-type: none;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  text-align: center;
+  color: #000;
+  font-size: 15px;
+  background-color: transparent;
+}
+#calendar .calendar_dates {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+/** overall width = width+padding-right **/
+#calendar .calendar_dates .calendar_names, #calendar .calendar_dates .calendar_days, #calendar .calendar_dates .calendar_today {
+  margin: 0px;
+  padding: 0px;
+  margin-right: 5px;
+  margin-top: 5px;
+  line-height: 80px;
+  vertical-align: middle;
+  float: left;
+  list-style-type: none;
+  width: 80px;
+  height: 80px;
+  font-size: 25px;
+  background-color: #DDD;
+  color: #000;
+  text-align: center;
+}
+#calendar .calendar_dates .calendar_today {
+  background-color: #CC6699;
+}
+:focus {
+  outline: none;
+}
+.calendar_clear {
+  clear: both;
+}
