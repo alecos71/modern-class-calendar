@@ -1,7 +1,6 @@
 <?php
   /**
   * @author  Xu Ding
-  * @email   thedilab@gmail.com
   * @website https://www.StarTutorial.com
   * @revised by Alessandro Marinuzzi
   * @website https://www.alecos.it/
