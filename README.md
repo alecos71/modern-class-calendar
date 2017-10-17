@@ -18,3 +18,5 @@ Moder Class Calendar written in Php<br>
 - Current Month Day Highlight<br>
 
 Under G.P.L. License<br>
+
+<img src="https://raw.githubusercontent.com/alecos71/modern-class-calendar/master/calendar.png" alt="screenshot">
