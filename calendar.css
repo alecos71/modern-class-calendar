@@ -1,9 +1,18 @@
+/**
+* @author  Xu Ding
+* @email   thedilab@gmail.com
+* @website https://www.StarTutorial.com
+* @revised by Alessandro Marinuzzi
+* @website https://www.alecos.it/
+* @revised 10.17.2017
+**/
 /*************************** Calendar Top Navigation **************************/
 #calendar {
   margin: 0px auto;
   padding: 0px;
   width: 602px;
   font-family: Helvetica, "Times New Roman", Times, serif;
+  background-color: white;
 }
 #calendar .calendar_box {
   position: relative;
@@ -59,7 +68,6 @@
   padding: 0px;
   margin-right: 5px;
   float: left;
-  list-style-type: none;
   width: 80px;
   height: 40px;
   line-height: 40px;
@@ -67,7 +75,7 @@
   text-align: center;
   color: #000;
   font-size: 15px;
-  background-color: transparent;
+  background-color: paleturquoise;
 }
 #calendar .calendar_dates {
   float: left;
@@ -85,7 +93,6 @@
   line-height: 80px;
   vertical-align: middle;
   float: left;
-  list-style-type: none;
   width: 80px;
   height: 80px;
   font-size: 25px;
