@@ -19,4 +19,4 @@ Moder Class Calendar written in Php<br>
 
 Under G.P.L. License<br>
 
-<center><img src="https://raw.githubusercontent.com/alecos71/modern-class-calendar/master/calendar.png" alt="screenshot"></center>
+![ScreenShot - See in Action!](https://raw.githubusercontent.com/alecos71/modern-class-calendar/master/calendar.png)
