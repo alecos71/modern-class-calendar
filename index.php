@@ -4,7 +4,7 @@
   * @website https://www.StarTutorial.com
   * @revised by Alessandro Marinuzzi
   * @website https://www.alecos.it/
-  * @revised 10.17.2017
+  * @revised 10.17.2018
   **/
   date_default_timezone_set('Europe/Rome');
 ?>
@@ -21,8 +21,7 @@
 <body>
 
 <?php
-  $find = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
-  $lang = substr($find,0,2);
+  $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2) : 'en';
   if ($lang == "it") {
     include("calendar_it.php");
   } else {
