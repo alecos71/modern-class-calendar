@@ -22,10 +22,10 @@
 
 <?php
   $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2) : 'en';
-  if ($lang == "it") {
-    include("calendar_it.php");
+  if (file_exists(realpath("calendar_$lang.php"))) {
+    include("calendar_$lang.php");
   } else {
-    include("calendar_en.php");
+    echo "No Calendar to View";
   }
 ?>
 
