@@ -4,16 +4,19 @@
   * @website https://www.StarTutorial.com
   * @revised by Alessandro Marinuzzi
   * @website https://www.alecos.it/
-  * @revised 10.17.2018
+  * @revised 16.11.2020 • UTF-8 •
   **/
+  ini_set('default_charset', 'UTF-8');
   date_default_timezone_set('Europe/Rome');
+  $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2) : 'en';
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 
-<html>
+<html lang="<?php echo $lang; ?>">
 
 <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Php Calendar</title>
   <link rel="stylesheet" type="text/css" media="screen" href="calendar.css">
 </head>
@@ -21,7 +24,6 @@
 <body>
 
 <?php
-  $lang = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2) : 'en';
   if (file_exists(realpath("calendar_$lang.php"))) {
     include("calendar_$lang.php");
   } else {

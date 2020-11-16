@@ -4,14 +4,16 @@
   * @website https://www.StarTutorial.com
   * @revised by Alessandro Marinuzzi
   * @website https://www.alecos.it/
-  * @revised 10.17.2017
+  * @revised 16.11.2020 • UTF-8 •
   **/
+  ini_set('default_charset', 'UTF-8');
   class Calendar {
     /**
     ** Constructor
     **/
     public function __construct() {
-      $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
+      $this->naviHref = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
+      $this->longMonth = 0; /* 0 for short month - 1 for long month */
     }
     /********************* PROPERTY ********************/
     private $dayLabels = array("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
@@ -21,6 +23,7 @@
     private $currentDate = null;
     private $daysInMonth = 0;
     private $naviHref = null;
+    private $longMonth = 0;
     /********************* PUBLIC **********************/
     /**
     ** Print out the calendar
@@ -29,7 +32,7 @@
       $year = null;
       $month = null;
       if (null == $year && isset($_GET['year'])) {
-        $year = htmlentities($_GET['year'], ENT_QUOTES);
+        $year = htmlentities($_GET['year'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
       } elseif (null == $year) {
         $year = date("Y", time());
       }
@@ -37,7 +40,7 @@
         $year = date("Y", time());
       }
       if (null == $month && isset($_GET['month'])) {
-        $month = htmlentities($_GET['month'], ENT_QUOTES);
+        $month = htmlentities($_GET['month'], ENT_QUOTES | ENT_HTML401, 'UTF-8');
       } elseif (null == $month) {
         $month = date("m", time());
       }
@@ -97,7 +100,12 @@
       $nextYear = $this->currentMonth == 12 ? intval($this->currentYear)+1 : $this->currentYear;
       $preMonth = $this->currentMonth == 1 ? 12 : intval($this->currentMonth)-1;
       $preYear = $this->currentMonth == 1 ? intval($this->currentYear)-1 : $this->currentYear;
-      return '<div class="calendar_header">' . "\r\n" . '<a class="calendar_prev" href="' . $this->naviHref . '?month=' . sprintf('%02d', $preMonth) . '&amp;year=' . $preYear.'">Prev</a>' . "\r\n" . '<span class="calendar_title">' . date('Y M', strtotime($this->currentYear . '-' . $this->currentMonth . '-1')) . '</span>' . "\r\n" . '<a class="calendar_next" href="' . $this->naviHref . '?month=' . sprintf("%02d", $nextMonth) . '&amp;year=' . $nextYear . '">Next</a>' . "\r\n"  . '</div>';
+      if ($this->longMonth == 1) {
+        $thisMonth = date('Y F', strtotime($this->currentYear . '-' . $this->currentMonth . '-1'));
+      } else {
+        $thisMonth = date('Y M', strtotime($this->currentYear . '-' . $this->currentMonth . '-1'));
+      }
+      return '<div class="calendar_header">' . "\r\n" . '<a class="calendar_prev" href="' . $this->naviHref . '?month=' . sprintf('%02d', $preMonth) . '&amp;year=' . $preYear.'">Prev</a>' . "\r\n" . '<span class="calendar_title">' . $thisMonth . '</span>' . "\r\n" . '<a class="calendar_next" href="' . $this->naviHref . '?month=' . sprintf("%02d", $nextMonth) . '&amp;year=' . $nextYear . '">Next</a>' . "\r\n"  . '</div>';
     }
     /**
     ** Create calendar week labels
