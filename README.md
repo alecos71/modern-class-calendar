@@ -1,7 +1,7 @@
 # Modern Php Class Calendar
 a php class that generates a dynamic and modern calendar
 
-author  Xu Ding<br>
+author Xu Ding<br>
 
 website https://www.StarTutorial.com<br>
 
